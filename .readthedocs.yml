@@ -3,22 +3,31 @@
 # See https://docs.readthedocs.io/en/stable/config-file/v2.html for details
 
 # Required
-version: 1
+version: 2
+
+# Set the OS, Python version and other tools you might need
+build:
+  os: ubuntu-20.04
+  tools:
+    python: "3.8"
+    # You can also specify other tool versions:
+    # nodejs: "19"
+    # rust: "1.64"
+    # golang: "1.19"
 
 # Build documentation in the docs/ directory with Sphinx
 sphinx:
-  configuration: docs/conf.py
+  configuration: source/conf.py
 
 # Build documentation with MkDocs
 #mkdocs:
 #  configuration: mkdocs.yml
 
 # Optionally build your docs in additional formats such as PDF
-formats:
-  - epub
+#formats:
+#  - epub
 
 # Optionally set the version of Python and requirements required to build your docs
 python:
-  version: 3.8
   install:
-    - requirements: docs/requirements.txt
+    - requirements: source/requirements.txt
